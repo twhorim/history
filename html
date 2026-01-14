@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인공지능의 역사 타임라인</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #ec4899, #f59e0b);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+        }
+
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid #3b82f6;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .dot {
+                left: 20px;
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                AI History
+            </h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#top" class="hover:text-blue-600 transition">홈</a>
+                <a href="#timeline" class="hover:text-blue-600 transition">타임라인</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="top" class="pt-20 pb-10 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+                인공지능의 역사:<br><span class="text-blue-600">1920년부터 현재까지</span>
+            </h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                단순한 계산기에서 인간의 창의성을 돕는 동반자로 진화하기까지,<br>
+                지난 100년 동안 AI가 걸어온 혁신과 도전의 순간들을 탐험해보세요.
+            </p>
+            <div class="animate-bounce inline-block text-slate-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Container -->
+    <section id="timeline" class="relative py-20 overflow-hidden">
+        <div class="timeline-line"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 relative">
+            
+            <!-- 1. 태동기 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-600 text-xs font-bold mb-2">1920s - 1950s</span>
+                    <h3 class="text-2xl font-bold mb-3">태동기: 아이디어와 기초 수립</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        로봇의 개념이 등장하고 계산 가능성에 대한 수학적 토대가 마련된 시기입니다. 앨런 튜링은 기계 지능의 기준을 제시했습니다.
+                    </p>
+                    <ul class="text-slate-500 text-xs space-y-1">
+                        <li>• 1920: '로봇' 단어 최초 사용 (카렐 차페크)</li>
+                        <li>• 1943: 맥컬럭-피츠 뉴런 모델 제안</li>
+                        <li>• 1950: 앨런 튜링의 '튜링 테스트'</li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
+                    <div class="w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-blue-200">🤖</div>
+                </div>
+            </div>
+
+            <!-- 2. 황금기 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 order-1 flex justify-center">
+                    <div class="w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-green-200">✨</div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 order-2 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-600 text-xs font-bold mb-2">1956 - 1974</span>
+                    <h3 class="text-2xl font-bold mb-3">황금기: AI의 탄생과 낙관</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        '인공지능'이라는 용어가 공식적으로 사용되기 시작했습니다. 초기 알고리즘들이 성공을 거두며 장밋빛 미래를 꿈꿨습니다.
+                    </p>
+                    <ul class="text-slate-500 text-xs space-y-1">
+                        <li>• 1956: 다트머스 회의, 'AI' 용어 탄생</li>
+                        <li>• 1966: 최초의 챗봇 ELIZA 개발</li>
+                        <li>• 1969: 퍼셉트론의 한계 노출</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. 제1차 AI 겨울 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-slate-200 text-slate-600 text-xs font-bold mb-2">1974 - 1980</span>
+                    <h3 class="text-2xl font-bold mb-3">제1차 AI 겨울</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        기술적 한계와 성능 부족으로 인해 대중의 관심과 투자가 급격히 냉각되었습니다.
+                    </p>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
+                    <div class="w-20 h-20 bg-slate-400 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-slate-200">❄️</div>
+                </div>
+            </div>
+
+            <!-- 4. 전문가 시스템 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 order-1 flex justify-center">
+                    <div class="w-20 h-20 bg-yellow-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-yellow-200">🧠</div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 order-2 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-yellow-100 text-yellow-600 text-xs font-bold mb-2">1980s</span>
+                    <h3 class="text-2xl font-bold mb-3">전문가 시스템의 부활</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        지식 베이스를 활용한 실용적인 AI가 산업계에 도입되었습니다. 역전파 알고리즘의 대중화로 신경망이 다시 주목받았습니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5. 제2차 AI 겨울 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-slate-200 text-slate-600 text-xs font-bold mb-2">1987 - 1993</span>
+                    <h3 class="text-2xl font-bold mb-3">제2차 AI 겨울</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        전문가 시스템의 유지보수 한계와 높은 비용 문제가 불거지며 다시 침체기를 겪게 되었습니다.
+                    </p>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
+                    <div class="w-20 h-20 bg-slate-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-slate-300">🧊</div>
+                </div>
+            </div>
+
+            <!-- 6. 머신러닝 시대 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 order-1 flex justify-center">
+                    <div class="w-20 h-20 bg-indigo-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-indigo-200">📈</div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 order-2 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 text-xs font-bold mb-2">1993 - 2011</span>
+                    <h3 class="text-2xl font-bold mb-3">데이터 기반의 성장</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        IBM 딥 블루의 체스 승리부터 왓슨의 퀴즈쇼 우승까지, 데이터와 통계 중심의 AI가 주류가 되었습니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 7. 딥러닝 혁명 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-xs font-bold mb-2">2012 - 2019</span>
+                    <h3 class="text-2xl font-bold mb-3">딥러닝과 알파고</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        이미지 인식과 바둑 대결을 통해 딥러닝의 위력이 증명되었습니다. 2017년 '트랜스포머'의 등장은 언어 모델의 대전환점이 되었습니다.
+                    </p>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
+                    <div class="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-purple-200">🌊</div>
+                </div>
+            </div>
+
+            <!-- 8. 거대 언어 모델의 대중화 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 order-1 flex justify-center">
+                    <div class="w-20 h-20 bg-pink-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-pink-200">💬</div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 order-2 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-pink-100 text-pink-600 text-xs font-bold mb-2">2020 - 2023</span>
+                    <h3 class="text-2xl font-bold mb-3">LLM과 생성형 AI의 폭발</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        분석을 넘어 창작의 영역으로 들어섰습니다. ChatGPT는 역사상 가장 빠르게 대중화된 서비스 중 하나가 되었습니다.
+                    </p>
+                    <ul class="text-slate-500 text-xs space-y-1">
+                        <li>• 2020: <strong>OpenAI GPT-3</strong> 발표 (초대규모 언어 모델의 서막)</li>
+                        <li>• 2021: <strong>DALL-E</strong> 등장으로 이미지 생성 AI 붐</li>
+                        <li>• 2022: <strong>ChatGPT</strong> 출시로 인한 범국민적 AI 체험</li>
+                        <li>• 2023: <strong>GPT-4, Claude, Gemini(Bard)</strong> 등 빅테크 간 경쟁 가속화</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 9. 자율적 에이전트와 추론의 진화 -->
+            <div class="timeline-item flex flex-col md:flex-row items-center mb-24 w-full">
+                <div class="dot"></div>
+                <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                    <span class="inline-block px-3 py-1 rounded-full bg-orange-100 text-orange-600 text-xs font-bold mb-2">2024 - 현재</span>
+                    <h3 class="text-2xl font-bold mb-3">추론과 에이전트: 실질적 생산성</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        단순 답변을 넘어 스스로 사고하고 행동하는 'AI 에이전트'와 논리적 추론이 가능한 모델이 등장하고 있습니다.
+                    </p>
+                    <ul class="text-slate-500 text-xs space-y-1">
+                        <li>• 2024: <strong>OpenAI o1</strong> 발표 (생각하는 시간을 갖는 '추론 모델')</li>
+                        <li>• 2024: <strong>Sora</strong> 공개로 인한 고퀄리티 비디오 생성 현실화</li>
+                        <li>• 현재: <strong>On-Device AI</strong> (갤럭시 AI, 애플 인텔리전스) 등 일상 기기 내장</li>
+                        <li>• 미래: 자율적 행동이 가능한 <strong>AI 에이전트</strong>와 AGI(인공일반지능) 논의 심화</li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
+                    <div class="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg shadow-orange-200">🚀</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h4 class="text-white text-lg font-bold mb-4">"과거를 알면 미래가 보인다"</h4>
+            <p class="text-sm mb-8">인공지능은 수많은 실패와 부활을 반복하며 오늘날에 이르렀습니다.<br>우리가 맞이할 다음 시대는 어떤 모습일까요?</p>
+            <div class="text-xs border-t border-slate-800 pt-8">
+                &copy; 2024 AI History Interactive Timeline. Built for learning.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button onclick="window.scrollTo(0,0)" class="fixed bottom-6 right-6 p-3 bg-blue-600 text-white rounded-full shadow-xl hover:bg-blue-700 transition transform hover:scale-110 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const dot = item.querySelector('.dot');
+                dot.style.transform = 'translateX(-50%) scale(1.5)';
+                dot.style.backgroundColor = '#3b82f6';
+            });
+            item.addEventListener('mouseleave', () => {
+                const dot = item.querySelector('.dot');
+                dot.style.transform = 'translateX(-50%) scale(1)';
+                dot.style.backgroundColor = 'white';
+            });
+        });
+    </script>
+</body>
+</html>
